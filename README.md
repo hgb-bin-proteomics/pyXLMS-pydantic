@@ -84,7 +84,7 @@ Maximum CSM score: 452.99
 
 ## Examples and Documentation
 
-- Example jupyter notebooks can be found in `/examples`.
+- [Examples of pyXLMS](https://github.com/hgb-bin-proteomics/pyXLMS/tree/master/examples) should all work.
 - A full documentation of the python package can be accessed via [hgb-bin-proteomics.github.io/pyXLMS-pydantic](https://hgb-bin-proteomics.github.io/pyXLMS-pydantic).
 
 ## FAQ
