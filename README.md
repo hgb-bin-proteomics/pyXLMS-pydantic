@@ -1,9 +1,10 @@
-# pyXLMS
+# pyXLMS-pydantic
 _a python package to process protein cross-linking data_
 
 <img src="https://github.com/hgb-bin-proteomics/pyXLMS/raw/master/docs/logo/logo_padded_shadow.png" class="dark-light" align="left" width="200px" style="padding: 5px 20px 10px 20px;"/>
 
-**pyXLMS** is a python package and web application with graphical user interface that aims to simplify and streamline the intermediate step of
+**pyXLMS-pydantic** is the [Pydantic](https://pydantic.dev/) version of [**pyXLMS**](https://github.com/hgb-bin-proteomics/pyXLMS):
+a python package that aims to simplify and streamline the intermediate step of
 connecting crosslink search engine results with down-stream analysis tools, enabling researchers even without bioinformatics knowledge to
 conduct in-depth crosslink analyses and shifting the focus from data transformation to data interpretation and therefore gaining biological
 insight. Currently pyXLMS supports input from several different crosslink search engines including:
@@ -29,13 +30,25 @@ PyMOL (via [PyXlinkViewer](https://github.com/BobSchiffrin/PyXlinkViewer)),
 ChimeraX (via [XMAS](https://github.com/ScheltemaLab/ChimeraX_XMAS_bundle)),
 or [IMP-X-FDR](https://github.com/vbc-proteomics-org/imp-x-fdr).
 
+## Why pyXLMS-pydantic and what are the differences to the classic pyXLMS?
+
+pyXLMS-pydantic is the [Pydantic](https://pydantic.dev/) version of the [classic pyXLMS](https://github.com/hgb-bin-proteomics/pyXLMS). Using Pydantic offers
+increased type safety and validation, programmatically easier handling of crosslink-spectrum-matches and crosslinks. However, this comes at the slight cost of
+performance and compatibility - pyXLMS-pydantic requires python version 3.14 or newer!
+
+For writing code there should not be any differences between the Pydantic and classic version, e.g. all the code written with the classic pyXLMS should also work with
+pyXLMS-pydantic. Crosslink-spectrum-matches, crosslinks, and parser results are now standalone classes based on the Pydantic
+[BaseModel](https://pydantic.dev/docs/validation/latest/api/pydantic/base_model/)
+instead of dictionaries though. Some private functions have also been moved. The terms pyXLMS and pyXLMS-pydantic are used synonymously throughout this repository, unless
+specifically stated!
+
 ## Installation
 
-pyXLMS supports python **version 3.7 and greater**!
+**Installing pyXLMS-pydantic will override the [classic pyXLMS](https://github.com/hgb-bin-proteomics/pyXLMS) version if it was previously installed!** 
 
-pyXLMS can easily be installed via pip:
+pyXLMS-pydantic supports python **version 3.14 and greater** and can easily be installed via pip:
 ```
-pip install pyxlms
+pip install git+https://github.com/hgb-bin-proteomics/pyXLMS-pydantic.git
 ```
 
 ## Quick Start
@@ -69,19 +82,10 @@ Maximum CSM score: 452.99
 ... )
 ```
 
-_For python projects using pyXLMS we also provide a project [template](https://github.com/hgb-bin-proteomics/pyXLMS-template)!_
+## Examples and Documentation
 
-## Web App
-
-The web app is publicly accessible for free via [hgb-bin-proteomics.github.io/pyXLMS-app](https://hgb-bin-proteomics.github.io/pyXLMS-app).
-
-Additionally, it can be run locally or self-hosted as described here: [pyXLMS Web Application](https://github.com/hgb-bin-proteomics/pyXLMS/blob/master/gui/README.md).
-
-## User Guide, Examples and Documentation
-
-- A user guide that documents all available functionality is available via [hgb-bin-proteomics.github.io/pyXLMS-docs](https://hgb-bin-proteomics.github.io/pyXLMS-docs).
-- Example jupyter notebooks can be found in `/examples`.
-- A full documentation of the python package can be accessed via [hgb-bin-proteomics.github.io/pyXLMS](https://hgb-bin-proteomics.github.io/pyXLMS).
+- [Examples of pyXLMS](https://github.com/hgb-bin-proteomics/pyXLMS/tree/master/examples) should all work.
+- A full documentation of the python package can be accessed via [hgb-bin-proteomics.github.io/pyXLMS-pydantic](https://hgb-bin-proteomics.github.io/pyXLMS-pydantic).
 
 ## FAQ
 
@@ -109,12 +113,7 @@ Interacting with [STRING](https://string-db.org/) requires an active internet co
 
 ## Citing
 
-If you are using pyXLMS please cite the following publication:
-
-- Manuscript in preparation
-  ```
-  (wip)
-  ```
+If you are using pyXLMS please cite as described [here](https://github.com/hgb-bin-proteomics/pyXLMS).
 
 ## Acknowledgements
 
