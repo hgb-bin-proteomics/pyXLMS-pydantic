@@ -654,6 +654,54 @@ class CrosslinkSpectrumMatch(BaseModel):
         """
         return hasattr(self, key)
 
+    def items(self) -> List[Tuple[str, Any]]:
+        r"""
+        Support for dict-like read access for backward compatibility.
+
+        Returns
+        -------
+        list of tuple of str, any
+            Returns a list of tuples of attribute name, attribute value.
+
+        Notes
+        -----
+        This internally just calls ``self.model_dump(mode="python").items()``.
+        See `model_dump <https://pydantic.dev/docs/validation/latest/api/pydantic/base_model/#pydantic.BaseModel.model_dump>`_.
+        """
+        return self.model_dump(mode="python").items()
+
+    def keys(self) -> List[str]:
+        r"""
+        Support for dict-like read access for backward compatibility.
+
+        Returns
+        -------
+        list of str
+            Returns a list of attribute names.
+
+        Notes
+        -----
+        This internally just calls ``self.model_dump(mode="python").keys()``.
+        See `model_dump <https://pydantic.dev/docs/validation/latest/api/pydantic/base_model/#pydantic.BaseModel.model_dump>`_.
+        """
+        return self.model_dump(mode="python").keys()
+
+    def values(self) -> List[Any]:
+        r"""
+        Support for dict-like read access for backward compatibility.
+
+        Returns
+        -------
+        list of any
+            Returns a list of attribute values.
+
+        Notes
+        -----
+        This internally just calls ``self.model_dump(mode="python").values()``.
+        See `model_dump <https://pydantic.dev/docs/validation/latest/api/pydantic/base_model/#pydantic.BaseModel.model_dump>`_.
+        """
+        return self.model_dump(mode="python").values()
+
     def copy_with_update(self, update: Dict[str, Any] = {}) -> CrosslinkSpectrumMatch:
         r"""Creates a deep copy of the crosslink-spectrum-match with optional attribute updates.
 
