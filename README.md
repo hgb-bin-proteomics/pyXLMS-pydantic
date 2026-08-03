@@ -1,6 +1,10 @@
 # pyXLMS-pydantic
 _a python package to process protein cross-linking data_
 
+> [!IMPORTANT]
+> **This version is no longer maintained! pyXLMS-pydantic has been merged into the main pyXLMS**
+> **in version [2.0.0](https://github.com/hgb-bin-proteomics/pyXLMS/releases/tag/v2.0.0)!**
+
 <img src="https://github.com/hgb-bin-proteomics/pyXLMS/raw/master/docs/logo/logo_padded_shadow.png" class="dark-light" align="left" width="200px" style="padding: 5px 20px 10px 20px;"/>
 
 **pyXLMS-pydantic** is the [Pydantic](https://pydantic.dev/) version of [**pyXLMS**](https://github.com/hgb-bin-proteomics/pyXLMS):
@@ -44,7 +48,7 @@ specifically stated!
 
 ## Installation
 
-**Installing pyXLMS-pydantic will override the [classic pyXLMS](https://github.com/hgb-bin-proteomics/pyXLMS) version if it was previously installed!** 
+**Installing pyXLMS-pydantic will override the [classic pyXLMS](https://github.com/hgb-bin-proteomics/pyXLMS) version if it was previously installed!**
 
 pyXLMS-pydantic supports python **version 3.14 and greater** and can easily be installed via pip:
 ```
